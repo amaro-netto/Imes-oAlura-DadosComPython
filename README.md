@@ -57,3 +57,7 @@ Para rodar o projeto, abra o arquivo `.ipynb` no VS Code ou em outra IDE compat�
 ### 🧑‍💻 Autor
 
 * Amaro Netto
+
+### 🧑‍💻 Co-Autor
+
+* José Victor
