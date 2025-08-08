@@ -53,3 +53,6 @@ tornado==6.5.1
 traitlets==5.14.3
 tzdata==2025.2
 wcwidth==0.2.13
+streamlit==1.28.0
+plotly==6.2.0
+statsmodels==0.14.0
