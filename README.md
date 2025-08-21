@@ -1,4 +1,4 @@
-# Imersão Dados com Python: Dashboard Interativo de Salários 🚀
+# NOME PROJETO: Imersão Dados com Python: Dashboard Interativo de Salários 🚀
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
@@ -7,15 +7,44 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
 [![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+![Status do Projeto](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen?style=for-the-badge)
+---
 
-> Este projeto foi desenvolvido durante a **Imersão de Dados com Python** da Alura. O objetivo é realizar a análise exploratória e o tratamento de uma base de dados sobre salários na área de tecnologia, culminando na construção e implantação de um dashboard interativo.
+### **Índice**
+* [📝 Descrição do Projeto](#-descrição-do-projeto)
+* [⚙️ Tecnologias Utilizadas](#-tecnologias-utilizadas)
+* [📁 Estrutura do Projeto](#-estrutura-do-projeto)
+* [🚀 Funcionalidades e Demonstração](#-funcionalidades-e-demonstração)
+* [💻 Como Usar a Aplicação](#-como-usar-a-aplicação)
+* [👥 Equipe do Projeto](#-equipe-do-projeto)
+* [✅ Conclusão](#-conclusão)
+* [📸 Prévia do Projeto](#-prévia-do-projeto)
 
 ---
 
-### 📁 Estrutura do Projeto
+### 📝 **Descrição do Projeto**
+O **Dashboard Interativo de Salários** é um projeto de análise de dados desenvolvido durante a Imersão de Dados com Python da Alura. O objetivo é realizar a análise exploratória e o tratamento de uma base de dados sobre salários na área de tecnologia, culminando na construção e implantação de um dashboard interativo. Este projeto demonstra habilidades em manipulação de dados com Pandas, criação de visualizações interativas com Plotly e desenvolvimento de dashboards com Streamlit.
 
+#### ⚙️ **Tecnologias Utilizadas**
+-   **Python**: Linguagem de programação principal.
+-   **Pandas**: Biblioteca para manipulação e análise de dados.
+-   **NumPy**: Biblioteca para computação numérica, utilizada para lidar com valores nulos (`NaN`).
+-   **Plotly**: Biblioteca para criação de visualizações e gráficos interativos, incluindo o mapa coroplético.
+-   **Streamlit**: Framework para construir e implantar dashboards e aplicativos web.
+-   **Visual Studio Code**: IDE (Ambiente de Desenvolvimento Integrado) utilizada no desenvolvimento.
+-   **Jupyter Notebooks**: Ambiente para desenvolvimento e execução interativa do código.
+
+#### 📁 **Estrutura do Projeto**
+```
+.
+├── app.py
+├── requirements.txt
+├── dF/
+├── dados/
+├── .venv/
+└── .gitignore
+```
 A estrutura do projeto é a seguinte:
-
 -   `app.py`: O arquivo principal do dashboard, escrito em Streamlit.
 -   `requirements.txt`: Lista todas as bibliotecas e dependências necessárias para o projeto.
 -   `dF`: A base de dados ORIGINAL.
@@ -25,27 +54,45 @@ A estrutura do projeto é a seguinte:
 
 ---
 
-### 💻 Tecnologias Utilizadas
+### 🚀 **Funcionalidades e Demonstração**
+#### **Principais Funcionalidades**
+* **Dashboard Interativo**: Interface para explorar os dados de salários.
+* **Filtros Dinâmicos**: Permite filtrar os dados por diferentes categorias, como experiência e cargo.
+* **Visualizações Gráficas**: Exibe salários médios, máximos e outras métricas em gráficos interativos.
+* **Mapa Coroplético**: Permite visualizar a distribuição de salários por localização geográfica.
 
-Este projeto utiliza as seguintes tecnologias:
+#### **Como funciona**
+O projeto foi estruturado para realizar a análise exploratória e a visualização de uma base de dados de salários na área de tecnologia, com o objetivo de construir um dashboard interativo. O fluxo de trabalho técnico é o seguinte:
 
--   **Python**: Linguagem de programação principal.
--   **Pandas**: Biblioteca para manipulação e análise de dados.
--   **NumPy**: Biblioteca para computação numérica, utilizada para lidar com valores nulos (`NaN`).
--   **Plotly**: Biblioteca para criação de visualizações e gráficos interativos, incluindo o mapa coroplético.
--   **Streamlit**: Framework para construir e implantar dashboards e aplicativos web.
--   **Visual Studio Code**: IDE (Ambiente de Desenvolvimento Integrado) utilizada no desenvolvimento.
--   **Jupyter Notebooks**: Ambiente para desenvolvimento e execução interativa do código.
+1.  **Coleta e Importação de Dados:** A base de dados é importada diretamente de um repositório no GitHub para um DataFrame, usando a biblioteca `pandas`.
+    * A base de dados original é carregada com o comando `pd.read_csv()`, que aponta para o arquivo `salaries.csv`.
+
+2.  **Análise e Preparação:**
+    * **Inspeção Inicial:** O `DataFrame` é analisado para entender sua estrutura, tipos de dados e dimensões usando métodos como `.head()`, `.info()` e `.shape`.
+    * **Tradução e Padronização:** Os nomes das colunas e os valores categóricos (como "SE" para Sênior, "FT" para Tempo Integral) são traduzidos e padronizados para o português, tornando a análise mais intuitiva.
+    * **Tratamento de Nulos:** A presença de valores nulos na coluna `ano` é identificada e, para garantir a consistência, as linhas afetadas são removidas com o método `df.dropna()`. O tipo de dado da coluna `ano` é então convertido de `float` para `int`.
+
+3.  **Análise e Visualização de Dados:**
+    * **Distribuições Salariais:** Gráficos como `barplot` e `boxplot` do `seaborn` são gerados para visualizar a média e a distribuição dos salários em relação à senioridade.
+    * **Exploração Gráfica:** Um histograma é usado para mostrar a frequência dos salários, enquanto gráficos de rosca (`pie` do `plotly`) são utilizados para analisar a proporção de tipos de trabalho (Remoto, Presencial e Híbrido).
+    * **Visualização Geográfica:** Um mapa coroplético (`choropleth` do `plotly`) é criado para ilustrar o salário médio de Cientistas de Dados por país, permitindo uma análise espacial dos dados.
+
+4.  **Exportação para o Dashboard:** Por fim, o `DataFrame` limpo e tratado é salvo em um novo arquivo `CSV`, que serve como a fonte de dados para o dashboard interativo construído com o `Streamlit`.
 
 ---
 
-### 🛠️ Pré-requisitos e Instalação
-
+### 💻 **Como Usar a Aplicação**
 Para executar este projeto localmente, siga os passos abaixo:
 
 1.  **Instale o Python 3.x** em sua máquina.
 2.  **Clone o repositório** do projeto.
-3.  **Abra a pasta** no VS Code.
+    ```bash
+    git clone [https://www.dio.me/articles/enviando-seu-projeto-para-o-github](https://www.dio.me/articles/enviando-seu-projeto-para-o-github)
+    ```
+3.  **Abra a pasta** no VS Code ou terminal.
+    ```bash
+    cd [nome do seu-repositório]
+    ```
 4.  **Crie e ative um ambiente virtual** para o projeto:
     ```bash
     python -m venv venv
@@ -56,50 +103,25 @@ Para executar este projeto localmente, siga os passos abaixo:
     ```bash
     pip install -r requirements.txt
     ```
+6.  Para rodar o dashboard localmente, use o comando no terminal:
+    ```bash
+    streamlit run app.py
+    ```
 
 ---
 
-### 📝 Resumo das Aulas
-
-#### **Aula 1: Análise e Exploração Inicial**
-
--   **Carregamento dos Dados:** A base de dados foi importada usando a biblioteca Pandas.
--   **Análise Exploratória:** Foram utilizados métodos como `.head()`, `.info()`, `.describe()` e `.shape` para obter uma visão geral da base, entender seus tipos de dados e dimensões.
--   **Tradução de Colunas e Categorias:** Colunas e categorias foram traduzidas para o português para facilitar a análise.
-
-#### **Aula 2: Tratamento e Limpeza de Dados**
-
--   **Identificação de Nulos:** A presença de valores nulos na coluna `ano` foi identificada usando `.isnull().sum()`.
--   **Estratégias de Preenchimento:** Diferentes métodos de tratamento de nulos foram explorados.
--   **Remoção de Dados Nulos:** As linhas incompletas foram removidas, e o tipo de dado da coluna `ano` foi convertido de `float` para `int` usando `.astype()`.
-
-#### **Aula 3: Visualização e Gráficos**
-
--   **Criação de Gráficos:** Foram criados gráficos estáticos de barra, histograma e boxplot usando `Pandas`, `Matplotlib` e `Seaborn`.
--   **Gráficos Interativos:** A biblioteca `Plotly` foi utilizada para construir gráficos interativos de barras, rosca e um mapa coroplético para o desafio.
-
-#### **Aula 4: Dashboard Interativo**
-
--   **Criação do Dashboard:** Um aplicativo `app.py` foi desenvolvido para criar um dashboard interativo com **Streamlit**.
--   **Filtros e Métricas:** Uma barra lateral foi implementada para filtros, e métricas principais (salário médio, máximo, etc.) foram adicionadas à página.
--   **Integração de Gráficos:** As visualizações criadas nas aulas anteriores foram integradas ao dashboard principal.
+### 👥 **Equipe do Projeto**
+<a href="https://github.com/amaro-netto" title="Amaro Netto"><img width="180" src="https://github.com/user-attachments/assets/b7a3a1bf-304a-4974-b75f-1d620ad6ecf1"/></a>
 
 ---
 
-### 🚀 Como Executar o Dashboard
-
-Para rodar o dashboard localmente, use o comando no terminal do VS Code:
-```bash
-streamlit run app.py
-```
----
-
-### 📄 Licença
-
-Este projeto é distribuído sob a licença MIT. Para mais detalhes, veja o arquivo `LICENSE` (se aplicável).
+### ✅ **Conclusão**
+Este projeto foi uma experiência de aprendizado valiosa, demonstrando a aplicação de bibliotecas como Pandas, Plotly e Streamlit para análise e visualização de dados. A imersão permitiu aprofundar conhecimentos em tratamento de dados e na construção de dashboards interativos.
 
 ---
 
-### 🧑‍💻 Autor
+### 📸 **Prévia do Projeto**
 
--   **Amaro Netto
+<img width="1920" height="2068" alt="image" src="https://github.com/user-attachments/assets/8c6c5bee-5121-4035-a89b-a6840988531c" />
+
+
