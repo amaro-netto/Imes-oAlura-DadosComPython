@@ -87,7 +87,7 @@ Para executar este projeto localmente, siga os passos abaixo:
 1.  **Instale o Python 3.x** em sua máquina.
 2.  **Clone o repositório** do projeto.
     ```bash
-    git clone [https://www.dio.me/articles/enviando-seu-projeto-para-o-github](https://www.dio.me/articles/enviando-seu-projeto-para-o-github)
+    git clone https://github.com/amaro-netto/ImersaoAlura-DadosComPython.git
     ```
 3.  **Abra a pasta** no VS Code ou terminal.
     ```bash
